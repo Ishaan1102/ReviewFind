@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Updated meta tags -->
+  <meta name="description" content="ReviewFind: A Review-Based Movie Recommendation Algorithm">
+  <meta property="og:title" content="ReviewFind Project Page"/>
+  <meta property="og:description" content="Discover how ReviewFind uses natural language processing to recommend movies based on user reviews."/>
+  <meta property="og:url" content="https://www.yourdomain.com/reviewfind"/>
+  <meta property="og:image" content="static/image/reviewfind_banner.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="Explore ReviewFind">
+  <meta name="twitter:description" content="An innovative movie recommendation algorithm that leverages user reviews to suggest films.">
+  <meta name="twitter:image" content="static/images/reviewfind_twitter.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords -->
+  <meta name="keywords" content="ReviewFind, movie recommendation, NLP, user reviews, personalized suggestions">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ReviewFind: A Review-Based Movie Recommendation Algorithm</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+  <section class="section hero is-dark">
+    <div class="hero-body ">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">ReviewFind: A Review-Based Movie Recommendation Algorithm</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+                  <span class="author-block">
+                    <a href="https://www.ishaan-bansal.com/" target="_blank">Ishaan Bansal</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">University of Massachusetts, Amherst<br>CS485 2024</span>
+                  </div>
+                  <h2 class="subtitle has-text-centered">
+                    Discover how ReviewFind's innovative algorithm analyzes user reviews to suggest the best movies, 
+                    enhancing your viewing experience.
+                  </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">ABSTRACT</h2>
+        <div class="content has-text-justified">
+          <p>
+            ReviewFind is a movie recommendation algorithm designed to quantify and recommend
+            movies to users based on specific descriptive terms found in user reviews. Unlike
+            traditional recommendation systems that typically rely on genre, ReviewFind will focus
+            on multiple user reviews to suggest movies to ReviewFind users more relevantly. This
+            approach aims to enhance user experience by discovering and recommending films that
+            align more closely with individual tastes and descriptive preferences.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">INTRODUCTION</h2>
+        <div class="content has-text-justified">
+          <p>       
+            With the advent of numerous streaming platforms and the rapid increase in available content, 
+            viewers face an overwhelming challenge in finding movies that truly align with their personal tastes. 
+            Platforms such as Netflix, Hulu, and Amazon Prime Video offer vast libraries of movies and TV shows, 
+            but their recommendation systems are often limited to content available within their own ecosystem. 
+            This restriction not only narrows the scope of recommendations but also hinders the discovery of 
+            potentially enjoyable content that exists on other platforms.
+          </p>
+          <p>
+            Traditional recommendation systems typically rely on a combination of user viewing history, ratings,
+             and the behavior of other users with similar tastes to suggest new content. While these systems have 
+             become quite sophisticated, they often fall short in capturing the nuanced preferences of individual users. 
+             For instance, a user who enjoys a particular movie might be recommended a sequel or another movie within 
+             the same franchise, rather than something new and unique that aligns with specific elements they appreciated 
+             in the original film. This approach can result in a repetitive viewing experience, where users are not 
+             exposed to the broader range of content that might appeal to them.
+          </p>
+          <p>  
+            ReviewFind seeks to address these limitations by introducing a recommendation algorithm that leverages 
+            natural language processing (NLP) to analyze user reviews. Instead of relying solely on genre, viewing history, 
+            or user ratings, ReviewFind delves into the specific descriptive terms found within reviews, such as "gritty," 
+            "heartwarming," or "intense." By focusing on the qualitative aspects of reviews, ReviewFind aims to create a more 
+            personalized and robust recommendation system that highlights movies based on the detailed preferences expressed 
+            by users in their reviews.
+          </p>
+          <p>
+            One of the key advantages of ReviewFind is its platform-agnostic nature. Unlike mainstream recommendation systems 
+            confined to a single platform, ReviewFind can recommend movies across various streaming services, offering users 
+            a broader spectrum of content. This flexibility ensures that users receive the most relevant recommendations, 
+            regardless of the platform hosting the content.
+          </p>
+          <p>
+            To achieve this, ReviewFind utilizes a dataset that includes both ratings and summary/review text. By extracting 
+            features from these review texts, the algorithm can better quantify and label movies, making suggestions based on 
+            the specific qualities users seek. This innovative approach not only enhances the recommendation process but also 
+            addresses the common frustrations users experience with traditional systems.
+          </p>
+          <p>
+            In summary, ReviewFind proposes a novel solution to the challenge of finding movies that align with individual tastes. 
+            By harnessing the power of NLP to analyze user reviews, ReviewFind offers a more nuanced and flexible recommendation 
+            system that transcends platform boundaries. This approach promises to enrich the user experience by providing more relevant 
+            and diverse movie suggestions, ultimately making the search for enjoyable content less daunting and more rewarding
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">RELATED WORK</h2>
+        <div class="content has-text-justified">
+          <p>
+            ReviewFind is unique solution to a common problem, however there have been many attempts to create an algorithm with 
+            the same function. Some popular variations are used by streaming platform giants like Netflix, Hulu, HBO Max, and more. 
+            A very common method in movie recommendation algorithms uses user profiling, which collects and compiles user data over
+             time spent on the platform and determines what movie to recommend next by comparing their list of movies and other 
+             users against a single user’s profile5. These methods vary across platforms, but platforms such as Netflix, Hulu, and 
+             HBO Max use a slightly varying version of this system:
+          </p>
+          <img src="static/images/image.png" alt="Detailed Comparison of Recommendation Algorithms" style="width:100%; height:auto;">
+          <p>
+            Their system takes in a variation of inputs and passes them through their algorithm in order to recommend a movie from 
+            its own database. To compare, this is what our approach is doing:
+          </p>
+          <img src="static/images/image2.png" alt="Flow chart our process" style="width:100%; height:auto;">
+          <p>Our input can be as simple as a few movie reviews for a single movie as our testing set, and NLP-retrieved traits 
+            for a movie can be determined and assigned automatically, allowing them to be searched for later by our end-user. 
+            Since our input requires significantly less information to create a recommendation as compared to other approaches, it’s 
+            easier to add more reviews to the training set and improve our algorithm.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">DATA</h2>
+        <div class="content has-text-justified">
+          <p>
+            We found an Amazon reviews dataset that is tied to product ASINs4, which can be used to identify a
+             movie that the review was left on. This is a massive dataset, around 8 million individual reviews 
+             across 250,000 movies, so an average of 32 reviews per movie, assuming a uniform ratio of reviews 
+             per movie. It is easy to obtain (a simple zipped file is available to download) and is the most 
+             relevant dataset we could find for our purpose. We were also interested because of the high number of 
+             reviewers with over 50 reviews, which made it a good candidate for collaborative filtering. Since our 
+             objective is to augment collaborative filtering with NLP, we thought it would be a good place to start from.
+          </p>
+          <p>
+            An issue with this dataset is that no data is labeled, and we’ve had to go about labeling it ourselves 
+            in order to reduce subjectivity around evaluating our recommender. Our solution was to use the inter-annotator 
+            agreement system and Cohen’s kappa3 on all the top recommendations which had tied cosine similarities 
+            (against the input movie review).
+          </p>
+          <p>
+            This way, we were able to get around manually classifying all the movies in the dataset as we gradually 
+            increased the size of our training set. This ended up capping itself at around 3000 movies as our decision 
+            to use cosine similarities yielded too many “matches” and it became infeasible to manually score the outputs.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">METHOD</h2>
+        <div class="content has-text-justified">
+          <p>
+            We utilized an Amazon reviews dataset, which contains approximately 8 million individual reviews across 250,000 movies, providing an average of 32 reviews per movie. We attempted to normalize and clean this data.
+          </p>
+          <ol>
+            <li>We filtered the dataset for movies which actually have the median of 32 reviews. This ensured that all our movies had, at least quantitatively, the same number of reviews.</li>
+            <li>Then we cut out the reviews which have a low "helpfulness" score. “Helpfulness” is a user-based metric, which conveys how useful the review was to readers. Since each review had varying participation in rating usefulness, we felt the need for a Bayesian average, once again cutting out reviews that were less than 70% helpful.</li>
+          </ol>
+          <p>
+            This had the added benefit of greatly reducing the size of the dataset. We also were able to retain a reasonable amount of users with a high number of reviews (speculating here, but this may possibly be because people who left a lot of reviews also had a lot of reviews survive the pruning of “useless” reviews.)
+          </p>
+          <p>
+            <strong>Step 1: Data Preparation</strong>
+            <br>We tried 2 approaches - only step 1, and a combination of both steps (overlapping tokens were not included):
+          </p>
+          <ol>
+            <li><strong>Preprocess Reviews:</strong>
+              <ul>
+                <li>Tokenize the reviews into individual words.</li>
+                <li>Remove stopwords (common words like "the," "and," etc.).</li>
+                <li>Stem or lemmatize words to their base form (e.g., "running" becomes "run").</li>
+              </ul>
+            </li>
+            <li><strong>Retain only descriptive terms (NLP step):</strong>
+              <ul>
+                <li>Using the Python spaCy library, we got rid of stopwords, and used POS tags and dependency parsing to retain descriptive terms. To be exact, we retained adverbs, adjectives, and nouns, and attempted to include adjectival phrases (this had mixed results and did not play well with the vocabulary section).</li>
+              </ul>
+            </li>
+          </ol>
+          <p>
+            <strong>Step 2: Feature Extraction</strong>
+          </p>
+          <ol>
+            <li>Create a Vocabulary: Build a set of all unique words (terms) found in the reviews.</li>
+            <li>Represent Reviews as Vectors:
+              <ul>
+                <li>For each review, create a vector where each element represents a word from the vocabulary.</li>
+                <li>The value of each element is binary (1 if the word is present, 0 if not) - Bag of Words (BoW).</li>
+                <li>“Sentiment analysis” by multiplying the vector with -1 if the review has fewer than 2 stars.</li>
+              </ul>
+            </li>
+          </ol>
+          <p>
+            <strong>Step 3: Building the Recommender</strong>
+          </p>
+          <ol>
+            <li>Input: Take a review written by the user.
+              <ul>
+                <li>Preprocess Input: spaCy descriptive term extraction.</li>
+              </ul>
+            </li>
+            <li>Represent Input as Vector: Create a vector for the input review using the same vocabulary and representation method as before, along with spoofed sentiment analysis.</li>
+            <li>Calculate Similarity: For each movie in your dataset, calculate the cosine similarity between the input review vector and the movie's review vector(s). Cosine similarity measures the similarity between two vectors in terms of their angle.</li>
+            <li>Rank Movies: Sort the movies by their similarity scores in descending order.</li>
+            <li>Recommend: Recommend the top 8 similarity scores (i.e. if multiple movies have a tied position, print all of them until we reach 8 scores total).</li>
+          </ol>
+          <p>
+            <strong>Simplified Example:</strong>
+          </p>
+          <ol>
+            <li>Reviews:
+              <ul>
+                <li>Movie A: "This movie is gritty and intense."</li>
+                <li>Movie B: "A thrilling and exhilarating action film."</li>
+                <li>Movie C: "A heartwarming and emotional love story."</li>
+              </ul>
+            </li>
+            <li>Vocabulary: {"gritty," "intense," "thrilling," "exhilarating," "action," "film," "heartwarming," "emotional," "love," "story"}</li>
+            <li>Review Vectors:
+              <ul>
+                <li>Movie A: [1,1,0,0,0,0,0,0,0,0]</li>
+                <li>Movie B: [0,0,1,1,1,1,0,0,0,0]</li>
+                <li>Movie C: [0,0,0,0,0,0,1,1,1,1]</li>
+              </ul>
+            </li>
+            <li>Input Review: "The movie was intense and thrilling."</li>
+            <li>Input Vector: [0,1,1,0,0,0,0,0,0,0]</li>
+            <li>Similarity Scores:
+              <ul>
+                <li>Movie A: 0.5</li>
+                <li>Movie B: 0.5</li>
+                <li>Movie C: 0</li>
+              </ul>
+            </li>
+            <li>Recommendation: Recommend Movie A and Movie B as they have the highest similarity scores.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">RESULTS</h2>
+        <div class="content has-text-justified">
+          <p>
+            <br>Due to our simplistic design choices, we anticipated that the accuracy and diversity of results by our recommender system would begin to fail as we introduced more and more movies into our training set. It's important to note that our model cannot work with novel movies in training due to the lack of labels and vectors—although it can work with novel review content for any movie in the training set. Moreover, since we performed our evaluation (our “loss function” of sorts) by hand through Cohen’s Kappa, it became infeasible to continue after 3000 movies as our model appeared to be saturated—with agreement rate peaking at 0.7, indicating “substantial agreement”. The rate dropped after that.
+          </p>
+          <p>
+            We learned that there were many issues with our design:
+          </p>
+          <ul>
+            <li><strong>Cosine similarity</strong> tends to fail as we populate the vocabulary.</li>
+            <li><strong>Spoofing negative sentiments</strong> would not work for reviews that were “average” as they would have a combination of praise and criticism, but our model would evaluate it to just be praise.</li>
+            <li><strong>Use of a BoW style of vocabulary</strong> became extremely large, simultaneously introducing sparsity and collision issues, and slowing down the recommender greatly:
+              <ul>
+                <li>Sparsity because our method of creating vectors by extracting features using “amod” dependency parsing caused a lot of artifacting (creating such items as “set in dystopian”), and</li>
+                <li>Collision because a lot of adjectival terms overlapped in vastly different genres of movies and our vectors could not always capture semantic differences.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            On a final note, we felt that using inter-annotator agreements was an interesting choice because the core of our system did not utilize machine learning, so we were evaluating the raw pre-calculated similarities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">FUTURE WORKS</h2>
+        <div class="content has-text-justified">
+          <p>
+            Fortunately, we have some clear places for improvement. Instead of using BoW, we can use a word 
+            embedding model on our descriptive terms, and extract sentiment from the text itself instead of 
+            using the rating system. We can get rid of cosine similarity for a function that is saturated less 
+            easily and does not bias towards popular titles, perhaps like TF-IDF. We are curious about using 
+            the e inter-annotator agreement as a loss function for a neural network model- we believe we can do 
+            so by retaining the small 3000 review size, and reducing the number of top recommendations to a 
+            smaller number like 4. This has some obvious advantages, like being able to handle different numbers of 
+            reviews, and creating deeper relationships for movies in the same genre.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">CONCLUSION</h2>
+        <div class="content has-text-justified">
+          <p>
+            ReviewFind offers a unique approach that utilizes natural language processing (NLP) to analyze 
+            user reviews, which allows its recommendations to consider qualitative data from reviews, 
+            augmenting the traditional approach to collaborative filtering recommendation systems. Future work 
+            will involve scaling the system, refining the algorithm, and conducting more comprehensive user studies.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">BIBLIOGRAPHY</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li>Honnibal, Matthew, and Ines Montani. <em>spaCy 2: Natural Language Understanding with Bloom Embeddings, Convolutional Neural Networks and Incremental Parsing</em>. 2017. Accessed 17 May 2024.</li>
+            <li>Miller, Evan. "How Not To Sort By Average Rating." <em>evanmiller.org</em>, 6 Feb. 2009. Accessed 17 May 2024.</li>
+            <li>Cohen, J. "A Coefficient of Agreement for Nominal Scales." <em>Educational and Psychological Measurement</em>, vol. 20, no. 1, 1960, pp. 37-46.</li>
+            <li>McAuley, Julian, and Jure Leskovec. "From Amateurs to Connoisseurs: Modeling the Evolution of User Expertise through Online Reviews." <em>WWW</em>, 2013.</li>
+            <li>Basilico, Justin, et al. "Netflix's Recommendation System." <em>Netflix Research</em>. Accessed 17 May 2024.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer has-background-dark">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half">
+        <h3 class="has-text-light">Contact Us</h3>
+        <ul>
+          <li><strong class="has-text-light">Email:</strong> <a class="has-text-info" href="mailto:bansal.ishaan11@gmail.com">bansal.ishaan11@gmail.com</a></li>
+          <li><strong class="has-text-light">Address:</strong> <span class="has-text-light">Amherst, MA 01003</span></li>
+        </ul>
+      </div>
+      <div class="column is-half">
+        <h3 class="has-text-light">Follow Us</h3>
+        <ul>
+          <li><a class="has-text-info" href="https://x.com/IshaanBansall" target="_blank">Twitter</a></li>
+          <li><a class="has-text-info" href="https://www.facebook.com/profile.php?id=100008141443200" target="_blank">Facebook</a></li>
+          <li><a class="has-text-info" href="https://github.com/Ishaan1102" target="_blank">Github</a></li>
+          <li><a class="has-text-info" href="https://www.linkedin.com/in/ib00/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="content has-text-centered">
+      <p class="has-text-light">&copy; 2024 ReviewFind. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+  </body>
+  </html>
